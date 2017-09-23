@@ -1,0 +1,24 @@
+<h2>
+    <%= link_to  "Add New", new_post_path, class: 'header-menu' %>
+    My Posts
+</h2>
+
+<ul>
+
+<% @posts.each do |post| %>
+<li>
+    <%= link_to  post.title, post_path(post) %> <!-- リンクをつける -->
+    <%= link_to  image_tag("edit.png", class: 'edit', title: 'edit'),
+        edit_post_path(post),
+        class: 'command'
+    %>
+    <%= link_to  image_tag("delete.png", class: 'delete', title: 'delete'),
+        post_path(post),
+        method: :delete,
+        class: 'command',
+        data: { confirm: 'Sure?' }
+    %>
+</li>
+<% end %>
+
+</ul>
