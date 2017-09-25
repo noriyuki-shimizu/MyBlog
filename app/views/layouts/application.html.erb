@@ -4,13 +4,15 @@
     <title>Myblog</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- 'data-turbolinks-track': 'reload' jquery利用のための不具合であったため外した -->
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turblinds-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinds-track': 'reload' %>
   </head>
 
   <body>
     <div class="container">
       <h1><%= link_to image_tag("blog.png", class: 'logo'), root_path %></h1>
+      <div class="time_now"></div>
       <%= yield %>
     </div>
   </body>
